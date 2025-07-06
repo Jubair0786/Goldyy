@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Star } from 'lucide-react'
 
@@ -23,21 +25,26 @@ export default function Rating({
           className={`w-${size} h-${size} fill-primary text-primary`}
         />
       ))}
+
       {partialStar > 0 && (
-        <div className='relative'>
+        <div className='relative w-fit'>
           <Star className={`w-${size} h-${size} text-primary`} />
           <div
-            className='absolute top-0 left-0 overflow-hidden'
-            style={{ width: `${partialStar * 100}%` }}
+            className={`absolute top-0 left-0 h-full overflow-hidden`}
           >
-            <Star className='w-6 h-6 fill-primary text-primary' />
+            <div
+              className={`[width:${partialStar * 100}%] h-full overflow-hidden`}
+            >
+              <Star className={`w-${size} h-${size} fill-primary text-primary`} />
+            </div>
           </div>
         </div>
       )}
+
       {[...Array(emptyStars)].map((_, i) => (
         <Star
           key={`empty-${i}`}
-          className={`w-${size} h-${size}  text-primary`}
+          className={`w-${size} h-${size} text-primary`}
         />
       ))}
     </div>

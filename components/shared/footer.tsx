@@ -8,7 +8,8 @@ import {
   FaYoutube,
   FaFacebook,
   FaInstagram,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,FaEnvelope,
+  FaShieldAlt
 } from 'react-icons/fa'
 
 import { Button } from '@/components/ui/button'
@@ -72,7 +73,7 @@ export default function Footer() {
               <li><Link href="/page/shipping">{t('Footer.Shipping Rates & Policies')}</Link></li>
               <li><Link href="/page/returns-policy">{t('Footer.Returns & Replacements')}</Link></li>
               <li><Link href="/page/help">{t('Footer.Help')}</Link></li>
-              <li><Link href="/contact">Contact Us</Link></li>
+              
             </ul>
           </div>
         </div>
@@ -123,6 +124,8 @@ export default function Footer() {
               <Link href="https://www.facebook.com/Goldyy Supplements " target="_blank"><FaFacebook className="text-blue-600" /></Link>
               <Link href="https://www.instagram.com/YOUR_PROFILE" target="_blank"><FaInstagram className="text-pink-500" /></Link>
               <Link href="https://maps.app.goo.gl/2dp4qPsFjEfBFtLBA" target="_blank"><FaMapMarkerAlt className="text-yellow-400" /></Link>
+              <Link href="/contact"><FaEnvelope className="text-green-600" /></Link>
+
             </div>
 
             {/* ✅ External Website Links */}
@@ -135,6 +138,10 @@ export default function Footer() {
                 <Globe className="w-4 h-4" />
                 <span>MyFitnessWorld.in</span>
               </Link>
+               <Link href="/verify" className="hover:text-green-400 flex items-center gap-1">
+            <FaShieldAlt className="text-green-400" />
+            Verify Product
+          </Link>
             </div>
           </div>
         </div>

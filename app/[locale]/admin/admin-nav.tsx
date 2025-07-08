@@ -31,6 +31,11 @@ const links = [
     title: 'Settings',
     href: '/admin/settings',
   },
+  {
+  title: 'Scratch Codes',
+  href: '/admin/scratch-codes',
+},
+
 ]
 export function AdminNav({
   className,

@@ -2,6 +2,7 @@
 
 import { ChevronUp, Globe } from 'lucide-react'
 import Link from 'next/link'
+
 import Image from 'next/image'
 import {
   FaWhatsapp,
@@ -138,10 +139,13 @@ export default function Footer() {
                 <Globe className="w-4 h-4" />
                 <span>MyFitnessWorld.in</span>
               </Link>
-               <Link href="/verify" className="hover:text-green-400 flex items-center gap-1">
-            <FaShieldAlt className="text-green-400" />
-            Verify Product
-          </Link>
+              <Link href="/verify" className="hover:text-green-400 flex items-center gap-1">
+  <FaShieldAlt className="text-green-400" />
+  Verify Product
+</Link>
+
+
+
             </div>
           </div>
         </div>

@@ -10,9 +10,9 @@ export default function NotFound() {
         <div className='flex justify-center mb-4 text-red-600'>
           <FileX2 className='w-10 h-10' />
         </div>
-        <h1 className='text-3xl font-bold mb-2 text-gray-800'>Page Not Found</h1>
+        <h1 className='text-3xl font-bold mb-2 text-gray-800'>Page Not Found write now</h1>
         <p className='text-sm text-gray-600 mb-6'>
-          Sorry, we couldn’t find the page you’re looking for.
+          Sorry, we couldn’t find the page you’re looking for but update will be as soon as Page .
         </p>
         <Button
           variant='outline'

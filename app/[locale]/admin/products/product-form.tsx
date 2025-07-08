@@ -25,7 +25,7 @@ import { ProductInputSchema, ProductUpdateSchema } from '@/lib/validator'
 import { Checkbox } from '@/components/ui/checkbox'
 import { toSlug } from '@/lib/utils'
 import { IProductInput } from '@/types'
-
+const TAGS = ['new-arrival', 'featured', 'best-seller']
 const productDefaultValues: IProductInput =
   process.env.NODE_ENV === 'development'
     ? {
@@ -297,6 +297,92 @@ const ProductForm = ({
             )}
           />
         </div>
+        {/* Tags */}
+<FormField
+  control={form.control}
+  name="tags"
+  render={() => (
+    <FormItem>
+      <FormLabel>Tags</FormLabel>
+      <div className="flex flex-wrap gap-4">
+        {TAGS.map((tag) => (
+          <FormField
+            key={tag}
+            control={form.control}
+            name="tags"
+            render={({ field }) => {
+              const isChecked = field.value.includes(tag)
+              return (
+                <FormItem className="flex items-center space-x-2">
+                  <FormControl>
+                    <Checkbox
+                      checked={isChecked}
+                      onCheckedChange={(checked) => {
+                        const newTags = checked
+                          ? [...field.value, tag]
+                          : field.value.filter((t: string) => t !== tag)
+                        field.onChange(newTags)
+                      }}
+                    />
+                  </FormControl>
+                  <FormLabel className="capitalize">{tag}</FormLabel>
+                </FormItem>
+              )
+            }}
+          />
+        ))}
+      </div>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
+{/* Sizes */}
+<FormField
+  control={form.control}
+  name="sizes"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Sizes (comma-separated)</FormLabel>
+      <FormControl>
+        <Input
+          placeholder="e.g. S, M, L, XL"
+          value={field.value.join(', ')}
+          onChange={(e) =>
+            field.onChange(
+              e.target.value.split(',').map((size) => size.trim())
+            )
+          }
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
+{/* Colors */}
+<FormField
+  control={form.control}
+  name="colors"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Colors (comma-separated)</FormLabel>
+      <FormControl>
+        <Input
+          placeholder="e.g. red, blue, green"
+          value={field.value.join(', ')}
+          onChange={(e) =>
+            field.onChange(
+              e.target.value.split(',').map((color) => color.trim())
+            )
+          }
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
 
         <div>
           <FormField

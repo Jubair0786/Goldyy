@@ -28,7 +28,7 @@ export default function VerifyForm() {
 
     if (res.ok) {
       setStatus('success')
-      setMessage('✅ This product is authentic.')
+      setMessage('✅ Verified: Youre holding an original Goldyy Supplements product — crafted for performance, trusted for purity.')
       setUsedAt(data.usedAt) // <-- Save usedAt
     } else {
       setStatus('error')

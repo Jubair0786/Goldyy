@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { Dumbbell } from 'lucide-react'
 
 export default async function LoadingPage() {
-  const t = await getTranslations()
+  const t = await getTranslations('Loading') // specify namespace
 
   return (
     <div className='flex flex-col items-center justify-center min-h-screen bg-white text-center'>
@@ -11,10 +11,11 @@ export default async function LoadingPage() {
           <Dumbbell className='w-10 h-10 animate-spin text-red-500' />
         </div>
         <h2 className='text-lg font-semibold text-gray-700'>
-          {t('Loading.Loading ')}
+          {t('Loading')}
         </h2>
-        <p className='text-sm text-gray-500 mt-2'>Please wait while we prepare your💪 experience...</p>
-        
+        <p className='text-sm text-gray-500 mt-2'>
+          Please wait while we prepare your GOLDYY SUPPLEMENTS experience...
+        </p>
       </div>
     </div>
   )

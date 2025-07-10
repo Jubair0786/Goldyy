@@ -19,16 +19,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'Invalid Code ❌' }, { status: 404 })
     }
 
-    if (scratch.isUsed) {
-      return NextResponse.json({ message: 'Code already used ⚠️' }, { status: 400 })
-    }
-
-    // ✅ Mark as used and set the verification time
-    scratch.isUsed = true
-    scratch.usedAt = new Date() // 🕒 Store the current time of verification
-    await scratch.save()
-
-    return NextResponse.json({ message: 'Code is valid ✅' }, { status: 200 })
+    // ✅ Do not mark as used, always return success
+    return NextResponse.json({
+      message: '✅ Verified: You are holding an original Goldyy Supplements product — crafted for performance, trusted for purity.',
+      usedAt: scratch.usedAt || scratch.createdAt, // optional
+    }, { status: 200 })
 
   } catch (err) {
     console.error('[VERIFY_SCRATCH_CODE_ERROR]', err)

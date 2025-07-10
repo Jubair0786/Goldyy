@@ -11,9 +11,9 @@ export default async function LoadingPage() {
           <Dumbbell className='w-10 h-10 animate-spin text-red-500' />
         </div>
         <h2 className='text-lg font-semibold text-gray-700'>
-          {t('Loading.Loading')}
+          {t('Loading.Loading ')}
         </h2>
-        <p className='text-sm text-gray-500 mt-2'>Please wait while we prepare your experience...</p>
+        <p className='text-sm text-gray-500 mt-2'>Please wait while we prepare your💪 experience...</p>
         
       </div>
     </div>
